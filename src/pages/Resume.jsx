@@ -2,23 +2,29 @@ import { experiences, studies } from '../data/resume';
 
 function Resume() {
   return (
-    <div>
+    <>
       <h2>Experiencia Laboral</h2>
-      {experiences.map(exp => (
-        <div key={exp.id}>
-          <h4>{exp.title}</h4>
-          <p>{exp.company} - {exp.date}</p>
-        </div>
-      ))}
+      <ul>
+      {experiences.map(exp => {
+        <li key={exp.id}>
+          <h3>{exp.title}</h3>
+          <p>{exp.company}</p>
+          <p>{exp.date}</p>
+        </li>
+      })}
+      </ul>
 
       <h2>Educación</h2>
-      {studies.map(study => (
-        <div key={study.id}>
-          <h4>{study.title}</h4>
-          <p>{study.institution} - {study.date}</p>
-        </div>
-      ))}
-    </div>
+      <ul>
+      {studies.map(studie => {
+        <li key={studie.id}>
+          <h3>{studie.title}</h3>
+          <p>{studie.institution}</p>
+          <p>{studie.date}</p>
+        </li>
+      })}
+      </ul>
+    </>
   );
 }
 
